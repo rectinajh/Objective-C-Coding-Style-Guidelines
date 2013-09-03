@@ -71,7 +71,7 @@
 <div class="highlight"><pre><span class="n">NSString</span> <span class="o">*</span><span class="n">password</span><span class="p">;</span>
 </pre></div>
 
-<p><strong>而不是：</strong></p>
+<p><strong>而不是</strong></p>
 
 <div class="highlight"><pre><span class="n">NSString</span><span class="o">*</span> <span class="n">password</span><span class="p">;</span>
 </pre></div>
@@ -101,7 +101,7 @@
 <span class="p">}</span>
 </pre></div>
 
-<p><strong>而不是：</strong></p>
+<p><strong>而不是</strong></p>
 
 <div class="highlight"><pre><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">error</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">success</span><span class="p">;</span>
@@ -222,7 +222,7 @@
 <span class="p">[</span><span class="n">UIApplication</span> <span class="n">sharedApplication</span><span class="p">].</span><span class="n">delegate</span><span class="p">;</span>
 </pre></div>
 
-<p><strong>而不是：</strong></p>
+<p><strong>而不是</strong></p>
 
 <div class="highlight"><pre><span class="p">[</span><span class="n">view</span> <span class="n">setBackgroundColor</span><span class="o">:</span><span class="p">[</span><span class="n">UIColor</span> <span class="n">orangeColor</span><span class="p">]];</span>
 <span class="n">UIApplication</span><span class="p">.</span><span class="n">sharedApplication</span><span class="p">.</span><span class="n">delegate</span><span class="p">;</span>
@@ -238,7 +238,7 @@
 <span class="p">}</span>
 </pre></div>
 
-<p><strong>而不是：</strong></p>
+<p><strong>而不是</strong></p>
 
 <div class="highlight"><pre><span class="k">if</span> <span class="p">(</span><span class="n">someObject</span> <span class="o">==</span> <span class="nb">nil</span><span class="p">)</span> <span class="p">{</span>
 <span class="p">}</span>
@@ -261,7 +261,7 @@
 <li>成员变量在初始化方法中不必设置为<code>0</code>或<code>nil</code>；</li>
 <li>使用<code>ARC</code>；</li>
 <li>分类明显的推荐使用<code>enum</code>来代替，而不是0、1、2……这样的字面数字；</li>
-</ul><p><strong>例如</strong></p>
+</ul><p><strong>例如：</strong></p>
 
 <div class="highlight"><pre><span class="k">typedef</span> <span class="k">enum</span> <span class="p">{</span>
     <span class="n">RequestUnload</span><span class="p">,</span>
