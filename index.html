@@ -1,79 +1,331 @@
 <!DOCTYPE html>
 <html>
-
   <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Objective-C Coding Style Guidelines : Smeegol's Objective-C Coding Style Guidelines, by Chinese." />
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
 
-    <title>Objective-C Coding Style Guidelines</title>
+    <title>Objective-C Coding Style Guidelines by Smeegol</title>
   </head>
 
   <body>
+    <header>
+      <div class="inner">
+        <h1>Objective-C Coding Style Guidelines</h1>
+        <h2>Smeegol's Objective-C Coding Style Guidelines, by Chinese.</h2>
+        <a href="https://github.com/Smeegol/Objective-C-Coding-Style-Guidelines" class="button"><small>View project on</small>GitHub</a>
+      </div>
+    </header>
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/Smeegol/Objective-C-Coding-Style-Guidelines">View on GitHub</a>
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h1>
+<a name="ios%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83" class="anchor" href="#ios%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83"><span class="octicon octicon-link"></span></a>iOS编码规范</h1>
 
-          <h1 id="project_title">Objective-C Coding Style Guidelines</h1>
-          <h2 id="project_tagline">Smeegol's Objective-C Coding Style Guidelines, by Chinese.</h2>
+<p>上海益生健康科技有限公司技术研发部 2013年9月3日</p>
 
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/Smeegol/Objective-C-Coding-Style-Guidelines/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/Smeegol/Objective-C-Coding-Style-Guidelines/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
+<h2>
+<a name="%E5%85%B3%E4%BA%8E" class="anchor" href="#%E5%85%B3%E4%BA%8E"><span class="octicon octicon-link"></span></a>关于</h2>
+
+<p>为了统一团队协作下代码的规范性、风格的统一性以及编程的注意点，而制定本规范。本规范仅作为建议推广使用，只要代码风格保持自身的规范性、风格的统一性，也是允许的。很多规范是语言通用的，有些是Objective-C特有的，本规范基于Apple编码规范、Xcode代码示例、Objective-C语言规范以及Java语言官方规范等文档，适用于使用Objective-C语言相关的工程。</p>
+
+<h2>
+<a name="%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99" class="anchor" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="octicon octicon-link"></span></a>参考资料</h2>
+
+<ul>
+<li>Apple: <a href="https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/CodingGuidelines/CodingGuidelines.html">Coding Guidelines for Cocoa</a>
+</li>
+<li>Goole: <a href="http://google-styleguide.googlecode.com/svn/trunk/objcguide.xml">Objective-C Style Guide</a>
+</li>
+<li><a href="https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/CodingGuidelines/CodingGuidelines.html">NYTimes Objective-C Style Guide</a></li>
+<li><a href="http://desheng.me/2010/10/31/objective-c%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83/">Daniel's Objective-C Coding Style Guidelines</a></li>
+</ul><h2>
+<a name="%E6%9C%AF%E8%AF%AD" class="anchor" href="#%E6%9C%AF%E8%AF%AD"><span class="octicon octicon-link"></span></a>术语</h2>
+
+<ul>
+<li>大写驼峰式命名法——每个词首字符大写，其余字符均小写，如<code>AppDelegate</code>、<code>Global</code>、<code>DataTransfer</code>等；</li>
+<li>小写驼峰式命名法——除第一个词首字符小写外，其余词首字符大写，其他字符均小写，如<code>fileName</code>、<code>tempArray</code>、<code>titleLabel</code>等；</li>
+</ul><h2>
+<a name="%E4%B8%80%E6%A0%BC%E5%BC%8F%E6%8E%92%E7%89%88" class="anchor" href="#%E4%B8%80%E6%A0%BC%E5%BC%8F%E6%8E%92%E7%89%88"><span class="octicon octicon-link"></span></a>一、格式排版</h2>
+
+<ul>
+<li>使用等宽字体（如Xcode默认的Menlo Regular）而不是非等宽字体，利于视觉上的上下对齐；</li>
+<li>每行不超过100个字符，Xcode通过Preferences-&gt;Text Editing-&gt;Editing-&gt; Page guide at column输入100来设置宽度提醒线；</li>
+<li>由于空格缩进相比Tab缩进，所敲键盘次数过多，也没有Tab缩进直观，所以这里使用Tab缩进而非空格缩进，并且缩进宽度为4个字符。Xcode通过Preferences-&gt;Text Editing-&gt;Indentation，Prefer indent using选择Tabs，Tab width输入4，Indent width输入4来进行设置。</li>
+<li>单目运算符与操作数之间不留空，如<code>&amp;</code>、<code>!</code>、<code>^</code>；双目运算符应与它们的操作数用1个空格分开；逗号和分号紧跟前面的语句，与后面的语句用1个空格分开；</li>
+<li>指针<code>*</code>与前面的数据类型留1个空格，紧贴后面的变量名；</li>
+</ul><p><strong>例如：</strong></p>
+
+<div class="highlight"><pre><span class="n">NSString</span> <span class="o">*</span><span class="n">password</span><span class="p">;</span>
+</pre></div>
+
+<p><strong>而不是：</strong></p>
+
+<div class="highlight"><pre><span class="n">NSString</span><span class="o">*</span> <span class="n">password</span><span class="p">;</span>
+</pre></div>
+
+<p>或者</p>
+
+<div class="highlight"><pre><span class="n">NSString</span> <span class="o">*</span> <span class="n">password</span><span class="p">;</span>
+</pre></div>
+
+<ul>
+<li>方法大括号和其它大括号（比如<code>for</code>、<code>if</code>、<code>while</code>、<code>switch</code>等等）应在语句的同一行开始，而在新的一行关闭；</li>
+</ul><p><strong>例如：</strong></p>
+
+<div class="highlight"><pre><span class="k">if</span> <span class="p">(</span><span class="n">user</span><span class="p">.</span><span class="n">isHappy</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">//Do something</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="c1">//Do something else</span>
+<span class="p">}</span>
+</pre></div>
+
+<ul>
+<li>为避免错误，条件语句体必须使用大括号，即便语句体中的语句可以不必使用大括号（比如只有一行语句）；</li>
+</ul><p><strong>例如：</strong></p>
+
+<div class="highlight"><pre><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">error</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">success</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+<p><strong>而不是：</strong></p>
+
+<div class="highlight"><pre><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">error</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">success</span><span class="p">;</span>
+</pre></div>
+
+<p>或者</p>
+
+<div class="highlight"><pre><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">error</span><span class="p">)</span> <span class="k">return</span> <span class="n">success</span><span class="p">;</span>
+</pre></div>
+
+<ul>
+<li>三元运算子：仅当使用该运算子可以让代码显得更清晰易懂时方可使用三元运算子，更多情况下应使用条件语句；</li>
+</ul><p><strong>例如：</strong></p>
+
+<div class="highlight"><pre><span class="n">result</span> <span class="o">=</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span> <span class="o">?</span> <span class="n">x</span> <span class="o">:</span> <span class="n">y</span><span class="p">;</span>
+</pre></div>
+
+<p><strong>而不是</strong></p>
+
+<div class="highlight"><pre><span class="n">result</span> <span class="o">=</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span> <span class="o">?</span> <span class="n">x</span> <span class="o">=</span> <span class="n">c</span> <span class="o">&gt;</span> <span class="n">d</span> <span class="o">?</span> <span class="n">c</span> <span class="o">:</span> <span class="n">d</span> <span class="o">:</span> <span class="n">y</span><span class="p">;</span>
+</pre></div>
+
+<ul>
+<li>在方法声明中，在(<code>-</code>/<code>+</code>)符号与返回值之间留1个空格。此外，参数与前面的冒号不留空，方法段与之间留1个空格；</li>
+</ul><p><strong>例如：</strong></p>
+
+<div class="highlight"><pre><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">setExampleText:</span><span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">text</span> <span class="nf">image:</span><span class="p">(</span><span class="n">UIImage</span> <span class="o">*</span><span class="p">)</span><span class="nv">image</span><span class="p">;</span>
+</pre></div>
+
+<ul>
+<li>为保证视觉上的整洁和代码组织，在方法之间应摒弃大段的空白行，提供且仅提供一行空白。</li>
+</ul><h2>
+<a name="%E4%BA%8C%E5%B7%A5%E7%A8%8B%E7%BB%84%E7%BB%87" class="anchor" href="#%E4%BA%8C%E5%B7%A5%E7%A8%8B%E7%BB%84%E7%BB%87"><span class="octicon octicon-link"></span></a>二、工程组织</h2>
+
+<ul>
+<li>工程Group组织尽量跟本地磁盘实际路径相一致，利于定位；</li>
+<li>工程Group名尽量跟相关功能名或模块名相一致。不推荐按照类型来组织，比如有些将视图控制器类放到一个Group，视图类放到另外的Group的做法；</li>
+<li>工程Group尽量使用中文名，利于辨识；</li>
+<li>工程Group组织可按照约定俗成的来，比如第三方框架放在<code>Libs</code>、<code>Utils</code>、<code>公共</code>等Group中，Bean类放在<code>Bean</code> Group中，公共的自定义类及其他放到专门的Group中，命名为<code>Global</code>或<code>XxxUtils</code>、<code>XxxTools</code>等；</li>
+<li>资源文件的组织应跟上面的文件一样，文件应使用有意义的英文命名，应能表达它的用法；应避免使用中文或汉语拼音，除非表达更清晰、更利于辨识。</li>
+</ul><h2>
+<a name="%E4%B8%89%E5%91%BD%E5%90%8D" class="anchor" href="#%E4%B8%89%E5%91%BD%E5%90%8D"><span class="octicon octicon-link"></span></a>三、命名</h2>
+
+<ul>
+<li>常量：
+
+<ul>
+<li>应避免在代码中出现字面常数或常字符串，使用超过一次的应以宏或全局常量来替代；</li>
+<li>优先使用全局常量而非宏，应使用<code>static</code>方式声明常量；</li>
+</ul>
+</li>
+</ul><p><strong>例如：</strong></p>
+
+<div class="highlight"><pre><span class="k">static</span> <span class="n">NSString</span> <span class="o">*</span> <span class="k">const</span> <span class="n">kNotificationLoggedIn</span><span class="p">;</span>
+</pre></div>
+
+<ul>
+<li>宏有两种方式命名，一是全部大写，并使用下划线连接各个部分，如<code>SCREEN_WIDTH</code>；或者以<code>k</code>开头，后面每个词首字符大写，其余小写，如<code>kAppKey</code>；</li>
+<li>其他约定俗成的命名方式，字典数据的键使用形如<code>kXxxKey</code>的方式命名，通知名称使用形如<code>kNotificationXxx</code>的方式命名。
+
+<ul>
+<li>变量：</li>
+</ul>
+</li>
+<li>变量采用小写驼峰式命名法；</li>
+<li>对于特殊类型的变量，命名时可带上属性，如<code>NSArray</code>的变量命名为<code>xxxArray</code>，其他的如<code>xxxDictionary</code>，<code>xxxSize</code>，<code>xxxRect</code>等；</li>
+<li>对于UI相关的变量，命名时要后缀以特定的控件名，如<code>UILabel</code>的变量命名为<code>xxxLabel</code>，其他的如<code>xxxButton</code>，<code>xxxTableView</code>，<code>xxxImageView</code>等；</li>
+<li>除了循环控制内的变量可以使用约定俗成的<code>i</code>、<code>j</code>、<code>k</code>等之外，变量应使用非缩写的英文单词。</li>
+</ul><p><strong>例如：</strong></p>
+
+<div class="highlight"><pre><span class="n">UIButton</span> <span class="o">*</span><span class="n">settingsButton</span><span class="p">;</span>
+</pre></div>
+
+<p><strong>而不是</strong></p>
+
+<div class="highlight"><pre><span class="n">UIButton</span> <span class="o">*</span><span class="n">setBtn</span><span class="p">;</span>
+</pre></div>
+
+<ul>
+<li>方法：
+
+<ul>
+<li>方法采用小写驼峰式命名法；</li>
+<li>方法的参数个数不宜超过4个，过多则考虑封装或重构，比如封装成<code>NSDictionary</code>格式；</li>
+</ul>
+</li>
+<li>类、协议、分类等：
+
+<ul>
+<li>采用大写驼峰式命名法；</li>
+<li>其他可参照Xcode默认生成文件。</li>
+</ul>
+</li>
+<li>文件：
+
+<ul>
+<li>文件采用大写驼峰式命名法；</li>
+<li>视图控制器相关的按照<code>XxxViewController</code>的方式命名；</li>
+<li>分类使用父类+分类名来命名，如<code>UIImageView+AFNetworking.h</code>。</li>
+</ul>
+</li>
+<li>杂项：
+
+<ul>
+<li>上面所有应使用有意义的英文命名，应能表达它的用法，避免使用汉语拼音；</li>
+<li>推荐使用约定俗成的缩写，比如<code>app</code>（application），<code>bg</code>（background），<code>func</code>（function），<code>info</code>（information），<code>init</code>（initialize），<code>max</code>（maximum），<code>min</code>（minimum），<code>msg</code>（message），<code>rect</code>（rectangle），<code>temp</code>（temporary）等；</li>
+<li>专有名词保持通用的大小写格式，要么全部大写，要么全部小写，比如<code>XML</code>、<code>HTML</code>、<code>URL</code>、<code>HTTP</code>、<code>FTP</code>、<code>JPG</code>、<code>PNG</code>、<code>GIF</code>、<code>RGB</code>等。</li>
+</ul>
+</li>
+</ul><h2>
+<a name="%E5%9B%9B%E5%85%B6%E4%BB%96" class="anchor" href="#%E5%9B%9B%E5%85%B6%E4%BB%96"><span class="octicon octicon-link"></span></a>四、其他</h2>
+
+<ul>
+<li>点表示法仅用于获取和改变属性，获取和改变属性同样仅用点表示法，括号表示法用于其他情况。</li>
+</ul><p><strong>例如：</strong></p>
+
+<div class="highlight"><pre><span class="n">view</span><span class="p">.</span><span class="n">backgroundColor</span> <span class="o">=</span> <span class="p">[</span><span class="n">UIColor</span> <span class="n">orangeColor</span><span class="p">];</span>
+<span class="p">[</span><span class="n">UIApplication</span> <span class="n">sharedApplication</span><span class="p">].</span><span class="n">delegate</span><span class="p">;</span>
+</pre></div>
+
+<p><strong>而不是：</strong></p>
+
+<div class="highlight"><pre><span class="p">[</span><span class="n">view</span> <span class="n">setBackgroundColor</span><span class="o">:</span><span class="p">[</span><span class="n">UIColor</span> <span class="n">orangeColor</span><span class="p">]];</span>
+<span class="n">UIApplication</span><span class="p">.</span><span class="n">sharedApplication</span><span class="p">.</span><span class="n">delegate</span><span class="p">;</span>
+</pre></div>
+
+<ul>
+<li>警告应该尽量解决掉，但也不必开启Treat Warnings as Errors，因为有些警告还是无法解决的。</li>
+<li>不推荐处处都是注释，好的代码应该自解释。关键的逻辑、跳转、判断，以及复杂的算法，非常有必要使用注释。多个注释应尽量左对齐。</li>
+<li>因为<code>nil</code>将被解析为<code>NO</code>，因此没有必要在条件语句中进行比较。永远不要将任何东西和<code>YES</code>进行直接比较，因为<code>YES</code>被定义为1，而一个<code>BOOL</code>变量可以有8个字节。</li>
+</ul><p><strong>例如：</strong></p>
+
+<div class="highlight"><pre><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">someObject</span><span class="p">)</span> <span class="p">{</span>
+<span class="p">}</span>
+</pre></div>
+
+<p><strong>而不是：</strong></p>
+
+<div class="highlight"><pre><span class="k">if</span> <span class="p">(</span><span class="n">someObject</span> <span class="o">==</span> <span class="nb">nil</span><span class="p">)</span> <span class="p">{</span>
+<span class="p">}</span>
+</pre></div>
+
+<p><strong>以下是BOOL变量的恰当用法：</strong></p>
+
+<div class="highlight"><pre><span class="k">if</span> <span class="p">(</span><span class="n">isAwesome</span><span class="p">)</span>
+<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="p">[</span><span class="n">someObject</span> <span class="n">boolValue</span><span class="p">])</span>
+</pre></div>
+
+<p><strong>而不是</strong></p>
+
+<div class="highlight"><pre><span class="k">if</span> <span class="p">([</span><span class="n">someObject</span> <span class="n">boolValue</span><span class="p">]</span> <span class="o">==</span> <span class="nb">NO</span><span class="p">)</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">isAwesome</span> <span class="o">==</span> <span class="nb">YES</span><span class="p">)</span>
+</pre></div>
+
+<ul>
+<li>方法的参数有效性检查；</li>
+<li>成员变量在初始化方法中不必设置为<code>0</code>或<code>nil</code>；</li>
+<li>使用<code>ARC</code>；</li>
+<li>分类明显的推荐使用<code>enum</code>来代替，而不是0、1、2……这样的字面数字；</li>
+</ul><p><strong>例如</strong></p>
+
+<div class="highlight"><pre><span class="k">typedef</span> <span class="k">enum</span> <span class="p">{</span>
+    <span class="n">RequestUnload</span><span class="p">,</span>
+    <span class="n">RequestLoading</span><span class="p">,</span> 
+    <span class="n">RequestLoadedOK</span><span class="p">,</span>
+    <span class="n">RequestLoadedFailed</span>
+<span class="p">}</span> <span class="n">RequestLoadState</span><span class="p">;</span>
+</pre></div>
+
+<ul>
+<li>使用MVC模式，减少层与层之间的耦合；</li>
+<li>回调的最佳方式是使用代理模式，而不是使用Notification；</li>
+<li>
+<code>delegate</code>属性使用<code>weak</code>，防止循环引用；</li>
+<li>所有自定义的<code>Notification</code>名应统一在公共文件中命名，便于甄别重复；</li>
+<li>本地存储：单一对象可用归档，简单属性可用<code>NSUserDefaults</code>，多个相同类型的数据可用<code>SQLite</code>；使用<code>FMDB</code>框架；</li>
+<li>使用通用的、约定俗成的<code>alloc</code>和<code>init</code>的方式创建实例，而不是使用<code>new</code>方法；</li>
+<li>使用<code>#pragma mark – XXX</code>来区别不同的区块；</li>
+<li>在创建单例对象的共享实例时，应使用线程安全模式；</li>
+</ul><p><strong>例如：</strong></p>
+
+<div class="highlight"><pre><span class="k">+</span> <span class="p">(</span><span class="n">instancetype</span><span class="p">)</span><span class="nf">sharedInstance</span> <span class="p">{</span>
+   <span class="k">static</span> <span class="kt">id</span> <span class="n">sharedInstance</span> <span class="o">=</span> <span class="nb">nil</span><span class="p">;</span>
+   <span class="k">static</span> <span class="kt">dispatch_once_t</span> <span class="n">onceToken</span><span class="p">;</span>
+   <span class="n">dispatch_once</span><span class="p">(</span><span class="o">&amp;</span><span class="n">onceToken</span><span class="p">,</span> <span class="o">^</span><span class="p">{</span>
+      <span class="n">sharedInstance</span> <span class="o">=</span> <span class="p">[[</span><span class="n">self</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">init</span><span class="p">];</span>
+   <span class="p">});</span>
+   <span class="k">return</span> <span class="n">sharedInstance</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+<ul>
+<li>在创建<code>NSString</code>，<code>NSDictionary</code>，<code>NSArray</code>和<code>NSNumber</code>等对象实例时，应使用Literals字面量。需要注意的是，不应将<code>nil</code>传给<code>NSArray</code>和<code>NSDictionary</code>字面量，否则会引起程序崩溃。</li>
+</ul><p><strong>例如：</strong></p>
+
+<div class="highlight"><pre><span class="n">NSArray</span> <span class="o">*</span><span class="n">names</span> <span class="o">=</span> <span class="err">@</span><span class="p">[</span><span class="s">@"Brian"</span><span class="p">,</span> <span class="s">@"Matt"</span><span class="p">,</span> <span class="s">@"Chris"</span><span class="p">,</span> <span class="s">@"Alex"</span><span class="p">,</span> <span class="s">@"Steve"</span><span class="p">];</span>
+<span class="n">NSDictionary</span> <span class="o">*</span><span class="n">productManagers</span> <span class="o">=</span> <span class="err">@</span><span class="p">{</span><span class="s">@"iPhone"</span> <span class="o">:</span> <span class="s">@"Kate"</span><span class="p">,</span> <span class="s">@"iPad"</span> <span class="o">:</span> <span class="s">@"Kamal"</span><span class="p">};</span>
+<span class="n">NSNumber</span> <span class="o">*</span><span class="n">shouldUseLiterals</span> <span class="o">=</span> <span class="err">@</span><span class="nb">YES</span><span class="p">;</span>
+<span class="n">NSNumber</span> <span class="o">*</span><span class="n">buildingZIPCode</span> <span class="o">=</span> <span class="mi">@10018</span><span class="p">;</span>
+</pre></div>
+
+<p><strong>而不是</strong></p>
+
+<div class="highlight"><pre><span class="n">NSArray</span> <span class="o">*</span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSArray</span> <span class="n">arrayWithObjects</span><span class="o">:</span><span class="s">@"Brian"</span><span class="p">,</span> <span class="s">@"Matt"</span><span class="p">,</span> <span class="s">@"Chris"</span><span class="p">,</span> <span class="s">@"Alex"</span><span class="p">,</span> <span class="s">@"Steve"</span><span class="p">,</span> <span class="nb">nil</span><span class="p">];</span>
+<span class="n">NSDictionary</span> <span class="o">*</span><span class="n">productManagers</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSDictionary</span> <span class="n">dictionaryWithObjectsAndKeys</span><span class="o">:</span><span class="s">@"Kate"</span><span class="p">,</span> <span class="s">@"iPhone"</span><span class="p">,</span> <span class="s">@"Kamal"</span><span class="p">,</span> <span class="s">@"iPad"</span><span class="p">,</span> <span class="nb">nil</span><span class="p">];</span>
+<span class="n">NSNumber</span> <span class="o">*</span><span class="n">shouldUseLiterals</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSNumber</span> <span class="n">numberWithBool</span><span class="o">:</span><span class="nb">YES</span><span class="p">];</span>
+<span class="n">NSNumber</span> <span class="o">*</span><span class="n">buildingZIPCode</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSNumber</span> <span class="n">numberWithInteger</span><span class="o">:</span><span class="mi">10018</span><span class="p">];</span>
+</pre></div>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/Smeegol/Objective-C-Coding-Style-Guidelines/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/Smeegol/Objective-C-Coding-Style-Guidelines/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/Smeegol/Objective-C-Coding-Style-Guidelines"></a> is maintained by <a href="https://github.com/Smeegol">Smeegol</a>.</p>
+
+          <p>This page was generated by <a href="pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
     </div>
 
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
-
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
-
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
-
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
-
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
-
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
-
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
-
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
-
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
-
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
-
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-      </section>
-    </div>
-
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Objective-C Coding Style Guidelines maintained by <a href="https://github.com/Smeegol">Smeegol</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
-
-    
-
+  
   </body>
 </html>
