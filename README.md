@@ -128,7 +128,7 @@ if (![someObject boolValue])
 if ([someObject boolValue] == NO)
 if (isAwesome == YES)
 ```
-* 方法的参数有效性检查；* 成员变量在初始化方法中不必设置为`0`或`nil`；* 使用`ARC`；* 分类明显的推荐使用`enum`来代替，而不是0、1、2……这样的字面数字* 使用MVC模式，减少层与层之间的耦合；* 回调的最佳方式是使用代理模式，而不是使用Notification；* `delegate`属性使用`weak`，防止循环引用；* 所有自定义的`Notification`名应统一在公共文件中命名，便于甄别重复；* 本地存储：单一对象可用归档，简单属性可用`NSUserDefaults`，多个相同类型的数据可用`SQLite`；使用`FMDB`框架；* 使用通用的、约定俗成的`alloc`和`init`的方式创建实例，而不是使用`new`方法；* 使用`#pragma mark – XXX`来区别不同的区块。* 在创建单例对象的共享实例时，应使用线程安全模式。
+* 方法的参数有效性检查；* 成员变量在初始化方法中不必设置为`0`或`nil`；* 使用`ARC`；* 分类明显的推荐使用`enum`来代替，而不是0、1、2……这样的字面数字* 使用MVC模式，减少层与层之间的耦合；* 回调的最佳方式是使用代理模式，而不是使用Notification；* `delegate`属性使用`weak`，防止循环引用；* 所有自定义的`Notification`名应统一在公共文件中命名，便于甄别重复；* 本地存储：单一对象可用归档，简单属性可用`NSUserDefaults`，多个相同类型的数据可用`SQLite`；使用`FMDB`框架；* 使用通用的、约定俗成的`alloc`和`init`的方式创建实例，而不是使用`new`方法；* 使用`#pragma mark – XXX`来区别不同的区块；* 在创建单例对象的共享实例时，应使用线程安全模式；
 **例如：**```objc
 + (instancetype)sharedInstance {
    static id sharedInstance = nil;
@@ -138,4 +138,22 @@ if (isAwesome == YES)
    });
    return sharedInstance;
 }
+```
+
+* 在创建`NSString`，`NSDictionary`，`NSArray`和`NSNumber`等对象的`immutable`实例时，应使用Literals字面量。需要注意的是，不应将`nil`传给`NSArray`和`NSDictionary`字面量，否则会引起程序崩溃。
+
+**For example:**
+```objc
+NSArray *names = @[@"Brian", @"Matt", @"Chris", @"Alex", @"Steve", @"Paul"];
+NSDictionary *productManagers = @{@"iPhone" : @"Kate", @"iPad" : @"Kamal", @"Mobile Web" : @"Bill"};
+NSNumber *shouldUseLiterals = @YES;
+NSNumber *buildingZIPCode = @10018;
+```
+
+**Not:**
+```objc
+NSArray *names = [NSArray arrayWithObjects:@"Brian", @"Matt", @"Chris", @"Alex", @"Steve", @"Paul", nil];
+NSDictionary *productManagers = [NSDictionary dictionaryWithObjectsAndKeys:@"Kate", @"iPhone", @"Kamal", @"iPad", @"Bill", @"Mobile Web", nil];
+NSNumber *shouldUseLiterals = [NSNumber numberWithBool:YES];
+NSNumber *buildingZIPCode = [NSNumber numberWithInteger:10018];
 ```
