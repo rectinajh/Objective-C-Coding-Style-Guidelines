@@ -14,7 +14,7 @@
 NSString *password;
 ```
 
-**而不是：**
+**而不是**
 ```objc
 NSString* password;
 ```
@@ -41,7 +41,7 @@ if (!error) {
 }
 ```
 
-**而不是：**
+**而不是**
 ```objc
 if (!error)
     return success;
@@ -90,14 +90,14 @@ UIButton *settingsButton;
 ```objc
 UIButton *setBtn;
 ```
-* 方法：  * 方法采用小写驼峰式命名法；  * 方法的参数个数不宜超过4个，过多则考虑封装或重构，比如封装成`NSDictionary`格式；* 类、协议、分类等：  * 采用大写驼峰式命名法；  * 其他可参照Xcode默认生成文件。* 文件：  * 文件采用大写驼峰式命名法；  * 视图控制器相关的按照`XxxViewController`的方式命名；  * 分类使用父类+分类名来命名，如`UIImageView+AFNetworking.h`。* 杂项：  * 上面所有应使用有意义的英文命名，应能表达它的用法，避免使用汉语拼音；  * 推荐使用约定俗成的缩写，比如`app`（application），`bg`（background），`func`（function），`info`（information），`init`（initialize），`max`（maximum），`min`（minimum），`msg`（message），`rect`（rectangle），`temp`（temporary）等；  * 专有名词保持通用的大小写格式，要么全部大写，要么全部小写，比如`XML`、`HTML`、`URL`、`HTTP`、`FTP`、`JPG`、`PNG`、`GIF`、`RGB`等。## 四、其他* 点表示法仅用于获取和改变属性，获取和改变属性同样仅用点表示法，括号表示法用于其他情况。
+* 方法：  * 方法采用小写驼峰式命名法；  * 方法的参数个数不宜超过4个，过多则考虑封装或重构，比如封装成`NSDictionary`格式；* 类、协议、分类等：  * 采用大写驼峰式命名法；  * 其他可参照Xcode默认生成文件。* 文件：  * 文件采用大写驼峰式命名法；  * 视图控制器相关的按照`XxxViewController`的方式命名；  * 分类使用父类+分类名来命名，如`UIImageView+AFNetworking.h`。* 杂项：  * 上面所有应使用有意义的英文命名，应能表达它的用法，避免使用汉语拼音；  * 推荐使用约定俗成的缩写，比如`app`（application）, `bg`（background）, `func`（function）, `info`（information）, `init`（initialize）, `max`（maximum）, `min`（minimum）, `msg`（message）, `rect`（rectangle）, `temp`（temporary）等；  * 专有名词保持通用的大小写格式，要么全部大写，要么全部小写，比如`XML`、`HTML`、`URL`、`HTTP`、`FTP`、`JPG`、`PNG`、`GIF`、`RGB`等。## 四、其他* 点表示法仅用于获取和改变属性，获取和改变属性同样仅用点表示法，括号表示法用于其他情况。
 **例如：**
 ```objc
 view.backgroundColor = [UIColor orangeColor];
 [UIApplication sharedApplication].delegate;
 ```
 
-**而不是：**
+**而不是**
 ```objc
 [view setBackgroundColor:[UIColor orangeColor]];
 UIApplication.sharedApplication.delegate;
@@ -110,7 +110,7 @@ if (!someObject) {
 }
 ```
 
-**而不是：**
+**而不是**
 ```objc
 if (someObject == nil) {
 }
@@ -128,7 +128,7 @@ if ([someObject boolValue] == NO)
 if (isAwesome == YES)
 ```
 * 方法的参数有效性检查；* 成员变量在初始化方法中不必设置为`0`或`nil`；* 使用`ARC`；* 分类明显的推荐使用`enum`来代替，而不是0、1、2……这样的字面数字；
-**例如**```objc
+**例如：**```objc
 typedef enum {
     RequestUnload,
     RequestLoading,	
