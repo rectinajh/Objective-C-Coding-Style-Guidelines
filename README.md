@@ -7,7 +7,7 @@
 * Apple: [Coding Guidelines for Cocoa](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/CodingGuidelines/CodingGuidelines.html)* Goole: [Objective-C Style Guide](http://google-styleguide.googlecode.com/svn/trunk/objcguide.xml)* [NYTimes Objective-C Style Guide](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/CodingGuidelines/CodingGuidelines.html)* [Daniel's Objective-C Coding Style Guidelines](http://desheng.me/2010/10/31/objective-c%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83/)
 
 ## 术语* 大写驼峰式命名法——每个词首字符大写，其余字符均小写，如`AppDelegate`、`Global`、`DataTransfer`等；* 小写驼峰式命名法——除第一个词首字符小写外，其余词首字符大写，其他字符均小写，如`fileName`、`tempArray`、`titleLabel`等；
-##编码规范### 一、格式排版* 使用等宽字体（如Xcode默认的Menlo Regular）而不是非等宽字体，利于视觉上的上下对齐；* 每行不超过100个字符，Xcode通过Preferences->Text Editing->Editing-> Page guide at column输入100来设置宽度提醒线；* 使用Tab缩进而非空格缩进，并且缩进宽度为4个字符，Xcode通过Preferences->Text Editing->Indentation，Prefer indent using选择Tabs，Tab width输入4，Indent width输入4来进行设置。* 单目运算符与操作数之间不留空，如`&`、`!`、`^`；双目运算符应与它们的操作数用1个空格分开；逗号和分号紧跟前面的语句，与后面的语句用1个空格分开；* 指针`*`与前面的数据类型留1个空格，紧贴后面的变量名；
+## 一、格式排版* 使用等宽字体（如Xcode默认的Menlo Regular）而不是非等宽字体，利于视觉上的上下对齐；* 每行不超过100个字符，Xcode通过Preferences->Text Editing->Editing-> Page guide at column输入100来设置宽度提醒线；* 由于空格缩进相比Tab缩进，所敲键盘次数过多，也没有Tab缩进直观，所以这里使用Tab缩进而非空格缩进，并且缩进宽度为4个字符。Xcode通过Preferences->Text Editing->Indentation，Prefer indent using选择Tabs，Tab width输入4，Indent width输入4来进行设置。* 单目运算符与操作数之间不留空，如`&`、`!`、`^`；双目运算符应与它们的操作数用1个空格分开；逗号和分号紧跟前面的语句，与后面的语句用1个空格分开；* 指针`*`与前面的数据类型留1个空格，紧贴后面的变量名；
 
 **例如：**
 ```objc
@@ -72,8 +72,7 @@ result = a > b ? x = c > d ? c : d : y;
 ```
 
 * 为保证视觉上的整洁和代码组织，在方法之间应摒弃大段的空白行，提供且仅提供一行空白。
-
-### 二、工程组织* 工程Group组织尽量跟本地磁盘实际路径相一致，利于定位；* 工程Group名尽量跟相关功能名或模块名相一致。不推荐按照类型来组织，比如有些将视图控制器类放到一个Group，视图类放到另外的Group的做法；* 工程Group尽量使用中文名，利于辨识；* 工程Group组织可按照约定俗成的来，比如第三方框架放在`Libs`、`Utils`、`公共`等Group中，Bean类放在`Bean` Group中，公共的自定义类及其他放到专门的Group中，命名为`Global`或`XxxUtils`、`XxxTools`等；* 资源文件的组织应跟上面的文件一样，文件应使用有意义的英文命名，应能表达它的用法；应避免使用中文或汉语拼音，除非表达更清晰、更利于辨识。### 三、命名* 常量：  * 应避免在代码中出现字面常数或常字符串，使用超过一次的应以宏或全局常量来替代；
+## 二、工程组织* 工程Group组织尽量跟本地磁盘实际路径相一致，利于定位；* 工程Group名尽量跟相关功能名或模块名相一致。不推荐按照类型来组织，比如有些将视图控制器类放到一个Group，视图类放到另外的Group的做法；* 工程Group尽量使用中文名，利于辨识；* 工程Group组织可按照约定俗成的来，比如第三方框架放在`Libs`、`Utils`、`公共`等Group中，Bean类放在`Bean` Group中，公共的自定义类及其他放到专门的Group中，命名为`Global`或`XxxUtils`、`XxxTools`等；* 资源文件的组织应跟上面的文件一样，文件应使用有意义的英文命名，应能表达它的用法；应避免使用中文或汉语拼音，除非表达更清晰、更利于辨识。## 三、命名* 常量：  * 应避免在代码中出现字面常数或常字符串，使用超过一次的应以宏或全局常量来替代；
   * 优先使用全局常量而非宏，应使用`static`方式声明常量；
   
 **例如：**
@@ -91,7 +90,7 @@ UIButton *settingsButton;
 ```objc
 UIButton *setBtn;
 ```
-* 方法：  * 方法采用小写驼峰式命名法；  * 方法的参数个数不宜超过4个，过多则考虑封装或重构，比如封装成`NSDictionary`格式；* 类、协议、分类等：  * 采用大写驼峰式命名法；  * 其他可参照Xcode默认生成文件。* 文件：  * 文件采用大写驼峰式命名法；  * 视图控制器相关的按照`XxxViewController`的方式命名；  * 分类使用父类+分类名来命名，如`UIImageView+AFNetworking.h`。* 杂项：  * 上面所有应使用有意义的英文命名，应能表达它的用法，避免使用汉语拼音；  * 推荐使用约定俗成的缩写，比如`app`（application），`bg`（background），`func`（function），`info`（information），`init`（initialize），`max`（maximum），`min`（minimum），`msg`（message），`rect`（rectangle），`temp`（temporary）等；  * 专有名词保持通用的大小写格式，要么全部大写，要么全部小写，比如`XML`、`HTML`、`URL`、`HTTP`、`FTP`、`JPG`、`PNG`、`GIF`、`RGB`等。## 编码实践* 点表示法仅用于获取和改变属性，获取和改变属性同样仅用点表示法，括号表示法用于其他情况。
+* 方法：  * 方法采用小写驼峰式命名法；  * 方法的参数个数不宜超过4个，过多则考虑封装或重构，比如封装成`NSDictionary`格式；* 类、协议、分类等：  * 采用大写驼峰式命名法；  * 其他可参照Xcode默认生成文件。* 文件：  * 文件采用大写驼峰式命名法；  * 视图控制器相关的按照`XxxViewController`的方式命名；  * 分类使用父类+分类名来命名，如`UIImageView+AFNetworking.h`。* 杂项：  * 上面所有应使用有意义的英文命名，应能表达它的用法，避免使用汉语拼音；  * 推荐使用约定俗成的缩写，比如`app`（application），`bg`（background），`func`（function），`info`（information），`init`（initialize），`max`（maximum），`min`（minimum），`msg`（message），`rect`（rectangle），`temp`（temporary）等；  * 专有名词保持通用的大小写格式，要么全部大写，要么全部小写，比如`XML`、`HTML`、`URL`、`HTTP`、`FTP`、`JPG`、`PNG`、`GIF`、`RGB`等。## 四、其他* 点表示法仅用于获取和改变属性，获取和改变属性同样仅用点表示法，括号表示法用于其他情况。
 **例如：**
 ```objc
 view.backgroundColor = [UIColor orangeColor];
@@ -128,7 +127,16 @@ if (![someObject boolValue])
 if ([someObject boolValue] == NO)
 if (isAwesome == YES)
 ```
-* 方法的参数有效性检查；* 成员变量在初始化方法中不必设置为`0`或`nil`；* 使用`ARC`；* 分类明显的推荐使用`enum`来代替，而不是0、1、2……这样的字面数字* 使用MVC模式，减少层与层之间的耦合；* 回调的最佳方式是使用代理模式，而不是使用Notification；* `delegate`属性使用`weak`，防止循环引用；* 所有自定义的`Notification`名应统一在公共文件中命名，便于甄别重复；* 本地存储：单一对象可用归档，简单属性可用`NSUserDefaults`，多个相同类型的数据可用`SQLite`；使用`FMDB`框架；* 使用通用的、约定俗成的`alloc`和`init`的方式创建实例，而不是使用`new`方法；* 使用`#pragma mark – XXX`来区别不同的区块；* 在创建单例对象的共享实例时，应使用线程安全模式；
+* 方法的参数有效性检查；* 成员变量在初始化方法中不必设置为`0`或`nil`；* 使用`ARC`；* 分类明显的推荐使用`enum`来代替，而不是0、1、2……这样的字面数字；
+**例如**```objc
+typedef enum {
+    RequestUnload,
+    RequestLoading,	
+    RequestLoadedOK,
+    RequestLoadedFailed
+} RequestLoadState;
+```
+* 使用MVC模式，减少层与层之间的耦合；* 回调的最佳方式是使用代理模式，而不是使用Notification；* `delegate`属性使用`weak`，防止循环引用；* 所有自定义的`Notification`名应统一在公共文件中命名，便于甄别重复；* 本地存储：单一对象可用归档，简单属性可用`NSUserDefaults`，多个相同类型的数据可用`SQLite`；使用`FMDB`框架；* 使用通用的、约定俗成的`alloc`和`init`的方式创建实例，而不是使用`new`方法；* 使用`#pragma mark – XXX`来区别不同的区块；* 在创建单例对象的共享实例时，应使用线程安全模式；
 **例如：**```objc
 + (instancetype)sharedInstance {
    static id sharedInstance = nil;
@@ -140,20 +148,20 @@ if (isAwesome == YES)
 }
 ```
 
-* 在创建`NSString`，`NSDictionary`，`NSArray`和`NSNumber`等对象的`immutable`实例时，应使用Literals字面量。需要注意的是，不应将`nil`传给`NSArray`和`NSDictionary`字面量，否则会引起程序崩溃。
+* 在创建`NSString`，`NSDictionary`，`NSArray`和`NSNumber`等对象实例时，应使用Literals字面量。需要注意的是，不应将`nil`传给`NSArray`和`NSDictionary`字面量，否则会引起程序崩溃。
 
-**For example:**
+**例如：**
 ```objc
-NSArray *names = @[@"Brian", @"Matt", @"Chris", @"Alex", @"Steve", @"Paul"];
-NSDictionary *productManagers = @{@"iPhone" : @"Kate", @"iPad" : @"Kamal", @"Mobile Web" : @"Bill"};
+NSArray *names = @[@"Brian", @"Matt", @"Chris", @"Alex", @"Steve"];
+NSDictionary *productManagers = @{@"iPhone" : @"Kate", @"iPad" : @"Kamal"};
 NSNumber *shouldUseLiterals = @YES;
 NSNumber *buildingZIPCode = @10018;
 ```
 
-**Not:**
+**而不是**
 ```objc
-NSArray *names = [NSArray arrayWithObjects:@"Brian", @"Matt", @"Chris", @"Alex", @"Steve", @"Paul", nil];
-NSDictionary *productManagers = [NSDictionary dictionaryWithObjectsAndKeys:@"Kate", @"iPhone", @"Kamal", @"iPad", @"Bill", @"Mobile Web", nil];
+NSArray *names = [NSArray arrayWithObjects:@"Brian", @"Matt", @"Chris", @"Alex", @"Steve", nil];
+NSDictionary *productManagers = [NSDictionary dictionaryWithObjectsAndKeys:@"Kate", @"iPhone", @"Kamal", @"iPad", nil];
 NSNumber *shouldUseLiterals = [NSNumber numberWithBool:YES];
 NSNumber *buildingZIPCode = [NSNumber numberWithInteger:10018];
 ```
