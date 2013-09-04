@@ -21,10 +21,10 @@
           <h1 id="project_title">Objective-C Coding Style Guidelines</h1>
           <h2 id="project_tagline"></h2>
 
-            <!--<section id="downloads">
+            <section id="downloads">
               <a class="zip_download_link" href="https://github.com/Smeegol/Objective-C-Coding-Style-Guidelines/zipball/master">Download this project as a .zip file</a>
               <a class="tar_download_link" href="https://github.com/Smeegol/Objective-C-Coding-Style-Guidelines/tarball/master">Download this project as a tar.gz file</a>
-            </section>-->
+            </section>
         </header>
     </div>
 
@@ -34,12 +34,23 @@
         <h1>
 <a name="ios%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83" class="anchor" href="#ios%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83"><span class="octicon octicon-link"></span></a>iOS编码规范</h1>
 
-<p>上海益生健康科技有限公司技术研发部 2013年9月3日</p>
+<p>上海益生健康科技有限公司 深圳产品研发中心</p>
 
 <h2>
+<a name="%E7%9B%AE%E5%BD%95" class="anchor" href="#%E7%9B%AE%E5%BD%95"><span class="octicon octicon-link"></span></a>目录</h2>
+
+<ul>
+<li><a href="#%E5%85%B3%E4%BA%8E">关于</a></li>
+<li><a href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99">参考资料</a></li>
+<li><a href="#%E6%9C%AF%E8%AF%AD">术语</a></li>
+<li><a href="#%E6%A0%BC%E5%BC%8F%E6%8E%92%E7%89%88">格式排版</a></li>
+<li><a href="#%E5%B7%A5%E7%A8%8B%E7%BB%84%E7%BB%87">工程组织</a></li>
+<li><a href="#%E5%91%BD%E5%90%8D%E6%96%B9%E5%BC%8F">命名方式</a></li>
+<li><a href="#%E7%BC%96%E7%A8%8B%E5%AE%9E%E8%B7%B5">编程实践</a></li>
+</ul><h2>
 <a name="%E5%85%B3%E4%BA%8E" class="anchor" href="#%E5%85%B3%E4%BA%8E"><span class="octicon octicon-link"></span></a>关于</h2>
 
-<p>为了统一团队协作下代码的规范性、风格的统一性以及编程的注意点，而制定本规范。本规范仅作为建议推广使用，只要代码风格保持自身的规范性、风格的统一性，也是允许的。很多规范是语言通用的，有些是Objective-C特有的，本规范基于Apple编码规范、Xcode代码示例、Objective-C语言规范以及Java语言官方规范等文档，适用于使用Objective-C语言相关的工程。</p>
+<p>为了统一团队协作下代码的规范性、风格的统一性以及编程的注意点，而制定本规范。本规范仅作为建议推广使用，原则上只要代码风格保持自身的规范性、风格的统一性，也是允许的，但是为了团队开发的确定性，遂希望iOS开发人员强制遵守。很多规范是语言通用的，有些是Objective-C特有的，本规范基于Apple编码规范、Xcode代码示例、Objective-C语言规范以及Java语言官方规范等文档，适用于使用Objective-C语言相关的工程。</p>
 
 <h2>
 <a name="%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99" class="anchor" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="octicon octicon-link"></span></a>参考资料</h2>
@@ -58,7 +69,7 @@
 <li>大写驼峰式命名法——每个词首字符大写，其余字符均小写，如<code>AppDelegate</code>、<code>Global</code>、<code>DataTransfer</code>等；</li>
 <li>小写驼峰式命名法——除第一个词首字符小写外，其余词首字符大写，其他字符均小写，如<code>fileName</code>、<code>tempArray</code>、<code>titleLabel</code>等；</li>
 </ul><h2>
-<a name="%E4%B8%80%E6%A0%BC%E5%BC%8F%E6%8E%92%E7%89%88" class="anchor" href="#%E4%B8%80%E6%A0%BC%E5%BC%8F%E6%8E%92%E7%89%88"><span class="octicon octicon-link"></span></a>一、格式排版</h2>
+<a name="%E6%A0%BC%E5%BC%8F%E6%8E%92%E7%89%88" class="anchor" href="#%E6%A0%BC%E5%BC%8F%E6%8E%92%E7%89%88"><span class="octicon octicon-link"></span></a>格式排版</h2>
 
 <ul>
 <li>使用等宽字体（如Xcode默认的Menlo Regular）而不是非等宽字体，利于视觉上的上下对齐；</li>
@@ -134,7 +145,7 @@
 <ul>
 <li>为保证视觉上的整洁和代码组织，在方法之间应摒弃大段的空白行，提供且仅提供一行空白。</li>
 </ul><h2>
-<a name="%E4%BA%8C%E5%B7%A5%E7%A8%8B%E7%BB%84%E7%BB%87" class="anchor" href="#%E4%BA%8C%E5%B7%A5%E7%A8%8B%E7%BB%84%E7%BB%87"><span class="octicon octicon-link"></span></a>二、工程组织</h2>
+<a name="%E5%B7%A5%E7%A8%8B%E7%BB%84%E7%BB%87" class="anchor" href="#%E5%B7%A5%E7%A8%8B%E7%BB%84%E7%BB%87"><span class="octicon octicon-link"></span></a>工程组织</h2>
 
 <ul>
 <li>工程Group组织尽量跟本地磁盘实际路径相一致，利于定位；</li>
@@ -143,7 +154,7 @@
 <li>工程Group组织可按照约定俗成的来，比如第三方框架放在<code>Libs</code>、<code>Utils</code>、<code>公共</code>等Group中，Bean类放在<code>Bean</code> Group中，公共的自定义类及其他放到专门的Group中，命名为<code>Global</code>或<code>XxxUtils</code>、<code>XxxTools</code>等；</li>
 <li>资源文件的组织应跟上面的文件一样，文件应使用有意义的英文命名，应能表达它的用法；应避免使用中文或汉语拼音，除非表达更清晰、更利于辨识。</li>
 </ul><h2>
-<a name="%E4%B8%89%E5%91%BD%E5%90%8D" class="anchor" href="#%E4%B8%89%E5%91%BD%E5%90%8D"><span class="octicon octicon-link"></span></a>三、命名</h2>
+<a name="%E5%91%BD%E5%90%8D%E6%96%B9%E5%BC%8F" class="anchor" href="#%E5%91%BD%E5%90%8D%E6%96%B9%E5%BC%8F"><span class="octicon octicon-link"></span></a>命名方式</h2>
 
 <ul>
 <li>常量：
@@ -212,7 +223,7 @@
 </ul>
 </li>
 </ul><h2>
-<a name="%E5%9B%9B%E5%85%B6%E4%BB%96" class="anchor" href="#%E5%9B%9B%E5%85%B6%E4%BB%96"><span class="octicon octicon-link"></span></a>四、其他</h2>
+<a name="%E7%BC%96%E7%A8%8B%E5%AE%9E%E8%B7%B5" class="anchor" href="#%E7%BC%96%E7%A8%8B%E5%AE%9E%E8%B7%B5"><span class="octicon octicon-link"></span></a>编程实践</h2>
 
 <ul>
 <li>点表示法仅用于获取和改变属性，获取和改变属性同样仅用点表示法，括号表示法用于其他情况。</li>
@@ -259,7 +270,8 @@
 <ul>
 <li>方法的参数有效性检查；</li>
 <li>成员变量在初始化方法中不必设置为<code>0</code>或<code>nil</code>；</li>
-<li>使用<code>ARC</code>；</li>
+<li>使用<code>ARC</code>，并且要注意内存管理规范；</li>
+<li>禁用不利于团队开发的<code>Storyboard</code>；</li>
 <li>分类明显的推荐使用<code>enum</code>来代替，而不是0、1、2……这样的字面数字；</li>
 </ul><p><strong>例如：</strong></p>
 
