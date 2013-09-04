@@ -127,7 +127,8 @@ if (![someObject boolValue])
 if ([someObject boolValue] == NO)
 if (isAwesome == YES)
 ```
-* 方法的参数有效性检查；* 成员变量在初始化方法中不必设置为`0`或`nil`；* 使用`ARC`；* 分类明显的推荐使用`enum`来代替，而不是0、1、2……这样的字面数字；
+* 方法的参数有效性检查；* 成员变量在初始化方法中不必设置为`0`或`nil`；* 使用`ARC`，并且要注意内存管理规范；
+* 禁用不利于团队开发的`Storyboard`；* 分类明显的推荐使用`enum`来代替，而不是0、1、2……这样的字面数字；
 **例如：**```objc
 typedef enum {
     RequestUnload,
