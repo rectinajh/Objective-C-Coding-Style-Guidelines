@@ -6,8 +6,8 @@
 * [关于](#关于)
 * [参考资料](#参考资料)
 * [术语](#术语)
-* [一、格式排版](#一、格式排版)
-* [二、工程组织](#工程组织)
+* [一、格式排版](#head1234)
+* [二、工程组织](#二、工程组织)
 * [三、命名方式](#三、命名方式)
 * [四、编程实践](#四、编程实践)
 
@@ -16,7 +16,7 @@
 * Apple: [Coding Guidelines for Cocoa](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/CodingGuidelines/CodingGuidelines.html)* Goole: [Objective-C Style Guide](http://google-styleguide.googlecode.com/svn/trunk/objcguide.xml)* [NYTimes Objective-C Style Guide](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/CodingGuidelines/CodingGuidelines.html)* [Daniel's Objective-C Coding Style Guidelines](http://desheng.me/2010/10/31/objective-c%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83/)
 
 ## 术语* 大写驼峰式命名法——每个词首字符大写，其余字符均小写，如`AppDelegate`、`Global`、`DataTransfer`等；* 小写驼峰式命名法——除第一个词首字符小写外，其余词首字符大写，其他字符均小写，如`fileName`、`tempArray`、`titleLabel`等；
-## 一、格式排版* 使用等宽字体（如Xcode默认的Menlo Regular）而不是非等宽字体，利于视觉上的上下对齐；* 每行不超过100个字符，Xcode通过Preferences->Text Editing->Editing-> Page guide at column输入100来设置宽度提醒线；* 由于空格缩进相比Tab缩进，所敲键盘次数过多，也没有Tab缩进直观，所以这里使用Tab缩进而非空格缩进，并且缩进宽度为4个字符。Xcode通过Preferences->Text Editing->Indentation，Prefer indent using选择Tabs，Tab width输入4，Indent width输入4来进行设置。* 单目运算符与操作数之间不留空，如`&`、`!`、`^`；双目运算符应与它们的操作数用1个空格分开；逗号和分号紧跟前面的语句，与后面的语句用1个空格分开；* 指针`*`与前面的数据类型留1个空格，紧贴后面的变量名；
+## <a id="head1234"></a>一、格式排版* 使用等宽字体（如Xcode默认的Menlo Regular）而不是非等宽字体，利于视觉上的上下对齐；* 每行不超过100个字符，Xcode通过Preferences->Text Editing->Editing-> Page guide at column输入100来设置宽度提醒线；* 由于空格缩进相比Tab缩进，所敲键盘次数过多，也没有Tab缩进直观，所以这里使用Tab缩进而非空格缩进，并且缩进宽度为4个字符。Xcode通过Preferences->Text Editing->Indentation，Prefer indent using选择Tabs，Tab width输入4，Indent width输入4来进行设置。* 单目运算符与操作数之间不留空，如`&`、`!`、`^`；双目运算符应与它们的操作数用1个空格分开；逗号和分号紧跟前面的语句，与后面的语句用1个空格分开；* 指针`*`与前面的数据类型留1个空格，紧贴后面的变量名；
 
 **例如：**
 ```objc
