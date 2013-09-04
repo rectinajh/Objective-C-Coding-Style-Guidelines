@@ -19,7 +19,7 @@ NSString *password;
 NSString* password;
 ```
 
-或者
+**或者**
 ```objc
 NSString * password;
 ```
@@ -47,7 +47,7 @@ if (!error)
     return success;
 ```
 
-或者
+**或者**
 ```objc
 if (!error) return success;
 ```
