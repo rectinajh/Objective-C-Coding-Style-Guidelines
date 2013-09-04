@@ -1,22 +1,21 @@
 # iOS编码规范
 
-上海益生健康科技有限公司产品研发中心
+上海益生健康科技有限公司 深圳产品研发中心
 
 ## 目录
 * [关于](#关于)
 * [参考资料](#参考资料)
 * [术语](#术语)
-* [一、格式排版](#head1234)
-* [二、工程组织](#二、工程组织)
-* [三、命名方式](#三、命名方式)
-* [四、编程实践](#四、编程实践)
+* [格式排版](#格式排版)
+* [工程组织](#工程组织)
+* [命名方式](#命名方式)
+* [编程实践](#编程实践)
 
-## 关于为了统一团队协作下代码的规范性、风格的统一性以及编程的注意点，而制定本规范。本规范仅作为建议推广使用，只要代码风格保持自身的规范性、风格的统一性，也是允许的。很多规范是语言通用的，有些是Objective-C特有的，本规范基于Apple编码规范、Xcode代码示例、Objective-C语言规范以及Java语言官方规范等文档，适用于使用Objective-C语言相关的工程。
-## 参考资料
+## 关于为了统一团队协作下代码的规范性、风格的统一性以及编程的注意点，而制定本规范。本规范仅作为建议推广使用，原则上只要代码风格保持自身的规范性、风格的统一性，也是允许的，但是为了团队开发的确定性，遂希望iOS开发人员强制遵守。很多规范是语言通用的，有些是Objective-C特有的，本规范基于Apple编码规范、Xcode代码示例、Objective-C语言规范以及Java语言官方规范等文档，适用于使用Objective-C语言相关的工程。## 参考资料
 * Apple: [Coding Guidelines for Cocoa](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/CodingGuidelines/CodingGuidelines.html)* Goole: [Objective-C Style Guide](http://google-styleguide.googlecode.com/svn/trunk/objcguide.xml)* [NYTimes Objective-C Style Guide](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/CodingGuidelines/CodingGuidelines.html)* [Daniel's Objective-C Coding Style Guidelines](http://desheng.me/2010/10/31/objective-c%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83/)
 
 ## 术语* 大写驼峰式命名法——每个词首字符大写，其余字符均小写，如`AppDelegate`、`Global`、`DataTransfer`等；* 小写驼峰式命名法——除第一个词首字符小写外，其余词首字符大写，其他字符均小写，如`fileName`、`tempArray`、`titleLabel`等；
-## <a id="head1234"></a>一、格式排版* 使用等宽字体（如Xcode默认的Menlo Regular）而不是非等宽字体，利于视觉上的上下对齐；* 每行不超过100个字符，Xcode通过Preferences->Text Editing->Editing-> Page guide at column输入100来设置宽度提醒线；* 由于空格缩进相比Tab缩进，所敲键盘次数过多，也没有Tab缩进直观，所以这里使用Tab缩进而非空格缩进，并且缩进宽度为4个字符。Xcode通过Preferences->Text Editing->Indentation，Prefer indent using选择Tabs，Tab width输入4，Indent width输入4来进行设置。* 单目运算符与操作数之间不留空，如`&`、`!`、`^`；双目运算符应与它们的操作数用1个空格分开；逗号和分号紧跟前面的语句，与后面的语句用1个空格分开；* 指针`*`与前面的数据类型留1个空格，紧贴后面的变量名；
+## 格式排版* 使用等宽字体（如Xcode默认的Menlo Regular）而不是非等宽字体，利于视觉上的上下对齐；* 每行不超过100个字符，Xcode通过Preferences->Text Editing->Editing-> Page guide at column输入100来设置宽度提醒线；* 由于空格缩进相比Tab缩进，所敲键盘次数过多，也没有Tab缩进直观，所以这里使用Tab缩进而非空格缩进，并且缩进宽度为4个字符。Xcode通过Preferences->Text Editing->Indentation，Prefer indent using选择Tabs，Tab width输入4，Indent width输入4来进行设置。* 单目运算符与操作数之间不留空，如`&`、`!`、`^`；双目运算符应与它们的操作数用1个空格分开；逗号和分号紧跟前面的语句，与后面的语句用1个空格分开；* 指针`*`与前面的数据类型留1个空格，紧贴后面的变量名；
 
 **例如：**
 ```objc
@@ -81,7 +80,7 @@ result = a > b ? x = c > d ? c : d : y;
 ```
 
 * 为保证视觉上的整洁和代码组织，在方法之间应摒弃大段的空白行，提供且仅提供一行空白。
-## 二、工程组织* 工程Group组织尽量跟本地磁盘实际路径相一致，利于定位；* 工程Group名尽量跟相关功能名或模块名相一致。不推荐按照类型来组织，比如有些将视图控制器类放到一个Group，视图类放到另外的Group的做法；* 工程Group尽量使用中文名，利于辨识；* 工程Group组织可按照约定俗成的来，比如第三方框架放在`Libs`、`Utils`、`公共`等Group中，Bean类放在`Bean` Group中，公共的自定义类及其他放到专门的Group中，命名为`Global`或`XxxUtils`、`XxxTools`等；* 资源文件的组织应跟上面的文件一样，文件应使用有意义的英文命名，应能表达它的用法；应避免使用中文或汉语拼音，除非表达更清晰、更利于辨识。## 三、命名方式* 常量：  * 应避免在代码中出现字面常数或常字符串，使用超过一次的应以宏或全局常量来替代；
+## 工程组织* 工程Group组织尽量跟本地磁盘实际路径相一致，利于定位；* 工程Group名尽量跟相关功能名或模块名相一致。不推荐按照类型来组织，比如有些将视图控制器类放到一个Group，视图类放到另外的Group的做法；* 工程Group尽量使用中文名，利于辨识；* 工程Group组织可按照约定俗成的来，比如第三方框架放在`Libs`、`Utils`、`公共`等Group中，Bean类放在`Bean` Group中，公共的自定义类及其他放到专门的Group中，命名为`Global`或`XxxUtils`、`XxxTools`等；* 资源文件的组织应跟上面的文件一样，文件应使用有意义的英文命名，应能表达它的用法；应避免使用中文或汉语拼音，除非表达更清晰、更利于辨识。## 命名方式* 常量：  * 应避免在代码中出现字面常数或常字符串，使用超过一次的应以宏或全局常量来替代；
   * 优先使用全局常量而非宏，应使用`static`方式声明常量；
   
 **例如：**
@@ -99,7 +98,7 @@ UIButton *settingsButton;
 ```objc
 UIButton *setBtn;
 ```
-* 方法：  * 方法采用小写驼峰式命名法；  * 方法的参数个数不宜超过4个，过多则考虑封装或重构，比如封装成`NSDictionary`格式；* 类、协议、分类等：  * 采用大写驼峰式命名法；  * 其他可参照Xcode默认生成文件。* 文件：  * 文件采用大写驼峰式命名法；  * 视图控制器相关的按照`XxxViewController`的方式命名；  * 分类使用父类+分类名来命名，如`UIImageView+AFNetworking.h`。* 杂项：  * 上面所有应使用有意义的英文命名，应能表达它的用法，避免使用汉语拼音；  * 推荐使用约定俗成的缩写，比如`app`（application）, `bg`（background）, `func`（function）, `info`（information）, `init`（initialize）, `max`（maximum）, `min`（minimum）, `msg`（message）, `rect`（rectangle）, `temp`（temporary）等；  * 专有名词保持通用的大小写格式，要么全部大写，要么全部小写，比如`XML`、`HTML`、`URL`、`HTTP`、`FTP`、`JPG`、`PNG`、`GIF`、`RGB`等。## 四、编程实践* 点表示法仅用于获取和改变属性，获取和改变属性同样仅用点表示法，括号表示法用于其他情况。
+* 方法：  * 方法采用小写驼峰式命名法；  * 方法的参数个数不宜超过4个，过多则考虑封装或重构，比如封装成`NSDictionary`格式；* 类、协议、分类等：  * 采用大写驼峰式命名法；  * 其他可参照Xcode默认生成文件。* 文件：  * 文件采用大写驼峰式命名法；  * 视图控制器相关的按照`XxxViewController`的方式命名；  * 分类使用父类+分类名来命名，如`UIImageView+AFNetworking.h`。* 杂项：  * 上面所有应使用有意义的英文命名，应能表达它的用法，避免使用汉语拼音；  * 推荐使用约定俗成的缩写，比如`app`（application）, `bg`（background）, `func`（function）, `info`（information）, `init`（initialize）, `max`（maximum）, `min`（minimum）, `msg`（message）, `rect`（rectangle）, `temp`（temporary）等；  * 专有名词保持通用的大小写格式，要么全部大写，要么全部小写，比如`XML`、`HTML`、`URL`、`HTTP`、`FTP`、`JPG`、`PNG`、`GIF`、`RGB`等。## 编程实践* 点表示法仅用于获取和改变属性，获取和改变属性同样仅用点表示法，括号表示法用于其他情况。
 **例如：**
 ```objc
 view.backgroundColor = [UIColor orangeColor];
