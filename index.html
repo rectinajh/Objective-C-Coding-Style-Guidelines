@@ -16,25 +16,25 @@
     <!-- HEADER -->
     <div id="header_wrap" class="outer">
         <header class="inner">
-          <!--<a id="forkme_banner" href="https://github.com/Smeegol/Objective-C-Coding-Style-Guidelines">View on GitHub</a>-->
+          <a id="forkme_banner" href="https://github.com/Smeegol/Objective-C-Coding-Style-Guidelines">View on GitHub</a>
 
-          <h1 id="project_title">iOS编码规范</h1>
-          <h2 id="project_tagline">上海益生健康科技有限公司 深圳产品研发中心</h2>
+          <h1 id="project_title">Objective-C Coding Style Guidelines</h1>
+          <h2 id="project_tagline"></h2>
 
-            <!--<section id="downloads">
+            <section id="downloads">
               <a class="zip_download_link" href="https://github.com/Smeegol/Objective-C-Coding-Style-Guidelines/zipball/master">Download this project as a .zip file</a>
               <a class="tar_download_link" href="https://github.com/Smeegol/Objective-C-Coding-Style-Guidelines/tarball/master">Download this project as a tar.gz file</a>
-            </section>-->
+            </section>
         </header>
     </div>
 
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
-        <!--<h1>
+        <h1>
 <a name="ios%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83" class="anchor" href="#ios%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83"><span class="octicon octicon-link"></span></a>iOS编码规范</h1>
 
-<p>上海益生健康科技有限公司 深圳产品研发中心</p>-->
+<p>上海益生健康科技有限公司 深圳产品研发中心</p>
 
 <h2>
 <a name="%E7%9B%AE%E5%BD%95" class="anchor" href="#%E7%9B%AE%E5%BD%95"><span class="octicon octicon-link"></span></a>目录</h2>
@@ -79,24 +79,24 @@
 <li>指针<code>*</code>与前面的数据类型留1个空格，紧贴后面的变量名；</li>
 </ul><p><strong>例如：</strong></p>
 
-<div class="highlight"><pre><span class="n">NSString</span> <span class="o">*</span><span class="n">password</span><span class="p">;</span>
+<div class="highlight highlight-objc"><pre><span class="n">NSString</span> <span class="o">*</span><span class="n">password</span><span class="p">;</span>
 </pre></div>
 
 <p><strong>而不是</strong></p>
 
-<div class="highlight"><pre><span class="n">NSString</span><span class="o">*</span> <span class="n">password</span><span class="p">;</span>
+<div class="highlight highlight-objc"><pre><span class="n">NSString</span><span class="o">*</span> <span class="n">password</span><span class="p">;</span>
 </pre></div>
 
 <p><strong>或者</strong></p>
 
-<div class="highlight"><pre><span class="n">NSString</span> <span class="o">*</span> <span class="n">password</span><span class="p">;</span>
+<div class="highlight highlight-objc"><pre><span class="n">NSString</span> <span class="o">*</span> <span class="n">password</span><span class="p">;</span>
 </pre></div>
 
 <ul>
 <li>方法大括号和其它大括号（比如<code>for</code>、<code>if</code>、<code>while</code>、<code>switch</code>等等）应在语句的同一行开始，而在新的一行关闭；</li>
 </ul><p><strong>例如：</strong></p>
 
-<div class="highlight"><pre><span class="k">if</span> <span class="p">(</span><span class="n">user</span><span class="p">.</span><span class="n">isHappy</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight highlight-objc"><pre><span class="k">if</span> <span class="p">(</span><span class="n">user</span><span class="p">.</span><span class="n">isHappy</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">//Do something</span>
 <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
     <span class="c1">//Do something else</span>
@@ -107,39 +107,39 @@
 <li>为避免错误，条件语句体必须使用大括号，即便语句体中的语句可以不必使用大括号（比如只有一行语句）；</li>
 </ul><p><strong>例如：</strong></p>
 
-<div class="highlight"><pre><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">error</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight highlight-objc"><pre><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">error</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">return</span> <span class="n">success</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 
 <p><strong>而不是</strong></p>
 
-<div class="highlight"><pre><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">error</span><span class="p">)</span>
+<div class="highlight highlight-objc"><pre><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">error</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">success</span><span class="p">;</span>
 </pre></div>
 
 <p><strong>或者</strong></p>
 
-<div class="highlight"><pre><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">error</span><span class="p">)</span> <span class="k">return</span> <span class="n">success</span><span class="p">;</span>
+<div class="highlight highlight-objc"><pre><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">error</span><span class="p">)</span> <span class="k">return</span> <span class="n">success</span><span class="p">;</span>
 </pre></div>
 
 <ul>
 <li>三元运算子：仅当使用该运算子可以让代码显得更清晰易懂时方可使用三元运算子，更多情况下应使用条件语句；</li>
 </ul><p><strong>例如：</strong></p>
 
-<div class="highlight"><pre><span class="n">result</span> <span class="o">=</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span> <span class="o">?</span> <span class="n">x</span> <span class="o">:</span> <span class="n">y</span><span class="p">;</span>
+<div class="highlight highlight-objc"><pre><span class="n">result</span> <span class="o">=</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span> <span class="o">?</span> <span class="n">x</span> <span class="o">:</span> <span class="n">y</span><span class="p">;</span>
 </pre></div>
 
 <p><strong>而不是</strong></p>
 
-<div class="highlight"><pre><span class="n">result</span> <span class="o">=</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span> <span class="o">?</span> <span class="n">x</span> <span class="o">=</span> <span class="n">c</span> <span class="o">&gt;</span> <span class="n">d</span> <span class="o">?</span> <span class="n">c</span> <span class="o">:</span> <span class="n">d</span> <span class="o">:</span> <span class="n">y</span><span class="p">;</span>
+<div class="highlight highlight-objc"><pre><span class="n">result</span> <span class="o">=</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span> <span class="o">?</span> <span class="n">x</span> <span class="o">=</span> <span class="n">c</span> <span class="o">&gt;</span> <span class="n">d</span> <span class="o">?</span> <span class="n">c</span> <span class="o">:</span> <span class="n">d</span> <span class="o">:</span> <span class="n">y</span><span class="p">;</span>
 </pre></div>
 
 <ul>
 <li>在方法声明中，在(<code>-</code>/<code>+</code>)符号与返回值之间留1个空格。此外，参数与前面的冒号不留空，方法段与之间留1个空格；</li>
 </ul><p><strong>例如：</strong></p>
 
-<div class="highlight"><pre><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">setExampleText:</span><span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">text</span> <span class="nf">image:</span><span class="p">(</span><span class="n">UIImage</span> <span class="o">*</span><span class="p">)</span><span class="nv">image</span><span class="p">;</span>
+<div class="highlight highlight-objc"><pre><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">setExampleText:</span><span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">text</span> <span class="nf">image:</span><span class="p">(</span><span class="n">UIImage</span> <span class="o">*</span><span class="p">)</span><span class="nv">image</span><span class="p">;</span>
 </pre></div>
 
 <ul>
@@ -166,7 +166,7 @@
 </li>
 </ul><p><strong>例如：</strong></p>
 
-<div class="highlight"><pre><span class="k">static</span> <span class="n">NSString</span> <span class="o">*</span> <span class="k">const</span> <span class="n">kNotificationLoggedIn</span><span class="p">;</span>
+<div class="highlight highlight-objc"><pre><span class="k">static</span> <span class="n">NSString</span> <span class="o">*</span> <span class="k">const</span> <span class="n">kNotificationLoggedIn</span><span class="p">;</span>
 </pre></div>
 
 <ul>
@@ -183,12 +183,12 @@
 <li>除了循环控制内的变量可以使用约定俗成的<code>i</code>、<code>j</code>、<code>k</code>等之外，变量应使用非缩写的英文单词。</li>
 </ul><p><strong>例如：</strong></p>
 
-<div class="highlight"><pre><span class="n">UIButton</span> <span class="o">*</span><span class="n">settingsButton</span><span class="p">;</span>
+<div class="highlight highlight-objc"><pre><span class="n">UIButton</span> <span class="o">*</span><span class="n">settingsButton</span><span class="p">;</span>
 </pre></div>
 
 <p><strong>而不是</strong></p>
 
-<div class="highlight"><pre><span class="n">UIButton</span> <span class="o">*</span><span class="n">setBtn</span><span class="p">;</span>
+<div class="highlight highlight-objc"><pre><span class="n">UIButton</span> <span class="o">*</span><span class="n">setBtn</span><span class="p">;</span>
 </pre></div>
 
 <ul>
@@ -229,13 +229,13 @@
 <li>点表示法仅用于获取和改变属性，获取和改变属性同样仅用点表示法，括号表示法用于其他情况。</li>
 </ul><p><strong>例如：</strong></p>
 
-<div class="highlight"><pre><span class="n">view</span><span class="p">.</span><span class="n">backgroundColor</span> <span class="o">=</span> <span class="p">[</span><span class="n">UIColor</span> <span class="n">orangeColor</span><span class="p">];</span>
+<div class="highlight highlight-objc"><pre><span class="n">view</span><span class="p">.</span><span class="n">backgroundColor</span> <span class="o">=</span> <span class="p">[</span><span class="n">UIColor</span> <span class="n">orangeColor</span><span class="p">];</span>
 <span class="p">[</span><span class="n">UIApplication</span> <span class="n">sharedApplication</span><span class="p">].</span><span class="n">delegate</span><span class="p">;</span>
 </pre></div>
 
 <p><strong>而不是</strong></p>
 
-<div class="highlight"><pre><span class="p">[</span><span class="n">view</span> <span class="n">setBackgroundColor</span><span class="o">:</span><span class="p">[</span><span class="n">UIColor</span> <span class="n">orangeColor</span><span class="p">]];</span>
+<div class="highlight highlight-objc"><pre><span class="p">[</span><span class="n">view</span> <span class="n">setBackgroundColor</span><span class="o">:</span><span class="p">[</span><span class="n">UIColor</span> <span class="n">orangeColor</span><span class="p">]];</span>
 <span class="n">UIApplication</span><span class="p">.</span><span class="n">sharedApplication</span><span class="p">.</span><span class="n">delegate</span><span class="p">;</span>
 </pre></div>
 
@@ -245,25 +245,25 @@
 <li>因为<code>nil</code>将被解析为<code>NO</code>，因此没有必要在条件语句中进行比较。永远不要将任何东西和<code>YES</code>进行直接比较，因为<code>YES</code>被定义为1，而一个<code>BOOL</code>变量可以有8个字节。</li>
 </ul><p><strong>例如：</strong></p>
 
-<div class="highlight"><pre><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">someObject</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight highlight-objc"><pre><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">someObject</span><span class="p">)</span> <span class="p">{</span>
 <span class="p">}</span>
 </pre></div>
 
 <p><strong>而不是</strong></p>
 
-<div class="highlight"><pre><span class="k">if</span> <span class="p">(</span><span class="n">someObject</span> <span class="o">==</span> <span class="nb">nil</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight highlight-objc"><pre><span class="k">if</span> <span class="p">(</span><span class="n">someObject</span> <span class="o">==</span> <span class="nb">nil</span><span class="p">)</span> <span class="p">{</span>
 <span class="p">}</span>
 </pre></div>
 
 <p><strong>以下是BOOL变量的恰当用法：</strong></p>
 
-<div class="highlight"><pre><span class="k">if</span> <span class="p">(</span><span class="n">isAwesome</span><span class="p">)</span>
+<div class="highlight highlight-objc"><pre><span class="k">if</span> <span class="p">(</span><span class="n">isAwesome</span><span class="p">)</span>
 <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="p">[</span><span class="n">someObject</span> <span class="n">boolValue</span><span class="p">])</span>
 </pre></div>
 
 <p><strong>而不是</strong></p>
 
-<div class="highlight"><pre><span class="k">if</span> <span class="p">([</span><span class="n">someObject</span> <span class="n">boolValue</span><span class="p">]</span> <span class="o">==</span> <span class="nb">NO</span><span class="p">)</span>
+<div class="highlight highlight-objc"><pre><span class="k">if</span> <span class="p">([</span><span class="n">someObject</span> <span class="n">boolValue</span><span class="p">]</span> <span class="o">==</span> <span class="nb">NO</span><span class="p">)</span>
 <span class="k">if</span> <span class="p">(</span><span class="n">isAwesome</span> <span class="o">==</span> <span class="nb">YES</span><span class="p">)</span>
 </pre></div>
 
@@ -275,7 +275,7 @@
 <li>分类明显的推荐使用<code>enum</code>来代替，而不是0、1、2……这样的字面数字；</li>
 </ul><p><strong>例如：</strong></p>
 
-<div class="highlight"><pre><span class="k">typedef</span> <span class="k">enum</span> <span class="p">{</span>
+<div class="highlight highlight-objc"><pre><span class="k">typedef</span> <span class="k">enum</span> <span class="p">{</span>
     <span class="n">RequestUnload</span><span class="p">,</span>
     <span class="n">RequestLoading</span><span class="p">,</span> 
     <span class="n">RequestLoadedOK</span><span class="p">,</span>
@@ -295,7 +295,7 @@
 <li>在创建单例对象的共享实例时，应使用线程安全模式；</li>
 </ul><p><strong>例如：</strong></p>
 
-<div class="highlight"><pre><span class="k">+</span> <span class="p">(</span><span class="n">instancetype</span><span class="p">)</span><span class="nf">sharedInstance</span> <span class="p">{</span>
+<div class="highlight highlight-objc"><pre><span class="k">+</span> <span class="p">(</span><span class="n">instancetype</span><span class="p">)</span><span class="nf">sharedInstance</span> <span class="p">{</span>
    <span class="k">static</span> <span class="kt">id</span> <span class="n">sharedInstance</span> <span class="o">=</span> <span class="nb">nil</span><span class="p">;</span>
    <span class="k">static</span> <span class="kt">dispatch_once_t</span> <span class="n">onceToken</span><span class="p">;</span>
    <span class="n">dispatch_once</span><span class="p">(</span><span class="o">&amp;</span><span class="n">onceToken</span><span class="p">,</span> <span class="o">^</span><span class="p">{</span>
@@ -309,15 +309,15 @@
 <li>在创建<code>NSString</code>，<code>NSDictionary</code>，<code>NSArray</code>和<code>NSNumber</code>等对象实例时，应使用Literals字面量。需要注意的是，不应将<code>nil</code>传给<code>NSArray</code>和<code>NSDictionary</code>字面量，否则会引起程序崩溃。</li>
 </ul><p><strong>例如：</strong></p>
 
-<div class="highlight"><pre><span class="n">NSArray</span> <span class="o">*</span><span class="n">names</span> <span class="o">=</span> <span class="err">@</span><span class="p">[</span><span class="s">@"Brian"</span><span class="p">,</span> <span class="s">@"Matt"</span><span class="p">,</span> <span class="s">@"Chris"</span><span class="p">,</span> <span class="s">@"Alex"</span><span class="p">,</span> <span class="s">@"Steve"</span><span class="p">];</span>
-<span class="n">NSDictionary</span> <span class="o">*</span><span class="n">productManagers</span> <span class="o">=</span> <span class="err">@</span><span class="p">{</span><span class="s">@"iPhone"</span> <span class="o">:</span> <span class="s">@"Kate"</span><span class="p">,</span> <span class="s">@"iPad"</span> <span class="o">:</span> <span class="s">@"Kamal"</span><span class="p">};</span>
-<span class="n">NSNumber</span> <span class="o">*</span><span class="n">shouldUseLiterals</span> <span class="o">=</span> <span class="err">@</span><span class="nb">YES</span><span class="p">;</span>
+<div class="highlight highlight-objc"><pre><span class="n">NSArray</span> <span class="o">*</span><span class="n">names</span> <span class="o">=</span> <span class="p">@[</span><span class="s">@"Brian"</span><span class="p">,</span> <span class="s">@"Matt"</span><span class="p">,</span> <span class="s">@"Chris"</span><span class="p">,</span> <span class="s">@"Alex"</span><span class="p">,</span> <span class="s">@"Steve"</span><span class="p">];</span>
+<span class="n">NSDictionary</span> <span class="o">*</span><span class="n">productManagers</span> <span class="o">=</span> <span class="p">@{</span><span class="s">@"iPhone"</span> <span class="o">:</span> <span class="s">@"Kate"</span><span class="p">,</span> <span class="s">@"iPad"</span> <span class="o">:</span> <span class="s">@"Kamal"</span><span class="p">};</span>
+<span class="n">NSNumber</span> <span class="o">*</span><span class="n">shouldUseLiterals</span> <span class="o">=</span> <span class="p">@</span><span class="nb">YES</span><span class="p">;</span>
 <span class="n">NSNumber</span> <span class="o">*</span><span class="n">buildingZIPCode</span> <span class="o">=</span> <span class="mi">@10018</span><span class="p">;</span>
 </pre></div>
 
 <p><strong>而不是</strong></p>
 
-<div class="highlight"><pre><span class="n">NSArray</span> <span class="o">*</span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSArray</span> <span class="n">arrayWithObjects</span><span class="o">:</span><span class="s">@"Brian"</span><span class="p">,</span> <span class="s">@"Matt"</span><span class="p">,</span> <span class="s">@"Chris"</span><span class="p">,</span> <span class="s">@"Alex"</span><span class="p">,</span> <span class="s">@"Steve"</span><span class="p">,</span> <span class="nb">nil</span><span class="p">];</span>
+<div class="highlight highlight-objc"><pre><span class="n">NSArray</span> <span class="o">*</span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSArray</span> <span class="n">arrayWithObjects</span><span class="o">:</span><span class="s">@"Brian"</span><span class="p">,</span> <span class="s">@"Matt"</span><span class="p">,</span> <span class="s">@"Chris"</span><span class="p">,</span> <span class="s">@"Alex"</span><span class="p">,</span> <span class="s">@"Steve"</span><span class="p">,</span> <span class="nb">nil</span><span class="p">];</span>
 <span class="n">NSDictionary</span> <span class="o">*</span><span class="n">productManagers</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSDictionary</span> <span class="n">dictionaryWithObjectsAndKeys</span><span class="o">:</span><span class="s">@"Kate"</span><span class="p">,</span> <span class="s">@"iPhone"</span><span class="p">,</span> <span class="s">@"Kamal"</span><span class="p">,</span> <span class="s">@"iPad"</span><span class="p">,</span> <span class="nb">nil</span><span class="p">];</span>
 <span class="n">NSNumber</span> <span class="o">*</span><span class="n">shouldUseLiterals</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSNumber</span> <span class="n">numberWithBool</span><span class="o">:</span><span class="nb">YES</span><span class="p">];</span>
 <span class="n">NSNumber</span> <span class="o">*</span><span class="n">buildingZIPCode</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSNumber</span> <span class="n">numberWithInteger</span><span class="o">:</span><span class="mi">10018</span><span class="p">];</span>
