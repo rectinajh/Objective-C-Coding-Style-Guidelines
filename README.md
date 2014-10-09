@@ -1,6 +1,6 @@
 # iOS编码规范
 
-上海益生健康科技有限公司 深圳产品研发中心
+深圳市禾田科技有限公司 技术研发部
 
 ## 目录
 * [关于](#关于)
@@ -145,7 +145,9 @@ typedef enum {
     RequestLoadedFailed
 } RequestLoadState;
 ```
-* 使用MVC模式，减少层与层之间的耦合；* 回调的最佳方式是使用代理模式，而不是使用Notification；* `delegate`属性使用`weak`，防止循环引用；* 所有自定义的`Notification`名应统一在公共文件中命名，便于甄别重复；* 本地存储：单一对象可用归档，简单属性可用`NSUserDefaults`，多个相同类型的数据可用`SQLite`；使用`FMDB`框架；* 使用通用的、约定俗成的`alloc`和`init`的方式创建实例，而不是使用`new`方法；* 使用`#pragma mark – XXX`来区别不同的区块；* 在创建单例对象的共享实例时，应使用线程安全模式；
+* 使用MVC模式，减少层与层之间的耦合；* 回调的最佳方式是使用代理模式，而不是使用Notification；* `delegate`属性使用`weak`，防止循环引用；* 所有自定义的`Notification`名应统一在公共文件中命名，便于甄别重复；* 本地存储：单一对象可用归档，简单属性可用`NSUserDefaults`，多个相同类型的数据可用`SQLite`；使用`FMDB`框架；
+* 数据库表名使用复数而不是单数，采用大写驼峰式命名法；各个字段使用下划线连接，采用小写写法；SQL语句中关键字使用大写，其他不变；
+* 使用通用的、约定俗成的`alloc`和`init`的方式创建实例，而不是使用`new`方法；* 使用`#pragma mark – XXX`来区别不同的区块；* 在创建单例对象的共享实例时，应使用线程安全模式；
 **例如：**```objc
 + (instancetype)sharedInstance {
    static id sharedInstance = nil;
