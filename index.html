@@ -34,7 +34,7 @@
         <h1>
 <a name="ios%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83" class="anchor" href="#ios%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83"><span class="octicon octicon-link"></span></a>iOS编码规范</h1>
 
-<p>上海益生健康科技有限公司 深圳产品研发中心</p>
+<p>深圳市禾田科技有限公司 技术研发部</p>
 
 <h2>
 <a name="%E7%9B%AE%E5%BD%95" class="anchor" href="#%E7%9B%AE%E5%BD%95"><span class="octicon octicon-link"></span></a>目录</h2>
@@ -290,6 +290,7 @@
 <code>delegate</code>属性使用<code>weak</code>，防止循环引用；</li>
 <li>所有自定义的<code>Notification</code>名应统一在公共文件中命名，便于甄别重复；</li>
 <li>本地存储：单一对象可用归档，简单属性可用<code>NSUserDefaults</code>，多个相同类型的数据可用<code>SQLite</code>；使用<code>FMDB</code>框架；</li>
+<li>数据库表名使用复数而不是单数，采用大写驼峰式命名法；各个字段使用下划线连接，采用小写写法；<code>SQL</code>语句中关键字使用大写，其他不变；</li>
 <li>使用通用的、约定俗成的<code>alloc</code>和<code>init</code>的方式创建实例，而不是使用<code>new</code>方法；</li>
 <li>使用<code>#pragma mark – XXX</code>来区别不同的区块；</li>
 <li>在创建单例对象的共享实例时，应使用线程安全模式；</li>
